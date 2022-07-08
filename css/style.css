@@ -157,7 +157,7 @@ a {
 .item .link {
   display: flex;
   position: relative;
-  transition: var(--transition);
+  transition: fill var(--transition), color var(--transition);
   height: 100%;
   text-decoration: none;
 }
