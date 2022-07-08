@@ -121,11 +121,13 @@ header {
   height: 16px;
   margin-right: 10px;
   fill: var(--primeri-text-color);
+  transition: var(--transition);
 }
 
 .auth-nav .link {
   display: flex;
   align-items: center;
+  transition: var(--transition);
 }
 
 ul,
@@ -141,13 +143,11 @@ a {
 .address-nav .link:hover,
 .address-nav .link:focus {
   color: var(--accent-text-color);
-  transition: var(--transition);
 }
 
 .link:hover .icon-item,
 .link:focus .icon-item {
   fill: var(--accent-text-color);
-  transition: var(--transition);
 }
 
 .link.current {
@@ -157,9 +157,9 @@ a {
 .item .link {
   display: flex;
   position: relative;
+  transition: var(--transition);
   height: 100%;
   text-decoration: none;
-  transition: var(--transition);
 }
 
 .link.current::after {
@@ -247,6 +247,7 @@ button {
   width: 100%;
 
   background-color: rgba(0, 0, 0, 0.2);
+  transition: var(--transition);
 }
 
 .modal {
@@ -493,6 +494,7 @@ button {
   background-color: transparent;
   border-radius: 50%;
   list-style: none;
+  transition: fill var(--transition), background-color var(--transition);
 }
 
 .link-icon {
@@ -506,7 +508,6 @@ button {
 .link-page:focus {
   fill: var(--address-color);
   background-color: var(--accent-text-color);
-  transition: var(--transition);
 }
 
 /* Section 4 */
@@ -529,12 +530,14 @@ button {
   background-color: transparent;
   border: 1px solid var(--icon-color);
   border-radius: 4px;
+  transition: border var(--transition);
 }
 
 .icon-customer {
   width: 106px;
   height: 60px;
   fill: var(--icon-color);
+  transition: fill var(--transition);
 }
 
 .main-customer + .main-customer {
@@ -544,13 +547,11 @@ button {
 .page-customer:hover,
 .page-customer:focus {
   border: 1px solid var(--accent-text-color);
-  transition: var(--transition);
 }
 
 .page-customer:hover .icon-customer,
 .page-customer:focus .icon-customer {
   fill: var(--accent-text-color);
-  transition: var(--transition);
 }
 
 /* Footer */
@@ -673,6 +674,7 @@ footer {
   background-color: #ffffff10;
   align-items: center;
   justify-content: center;
+  transition: background-color var(--transition);
 }
 
 .icon-footer {
@@ -684,7 +686,6 @@ footer {
 .web-footer:hover,
 .web-footer:focus {
   background-color: var(--accent-text-color);
-  transition: var(--transition);
 }
 
 /* Portfolio */
@@ -702,6 +703,8 @@ footer {
 .navigation {
   padding: 6px 22px;
   vertical-align: top;
+  transition: box-shadow var(--transition), color var(--transition),
+    background-color var(--transition);
 
   font-family: 'Roboto';
   font-weight: 500;
@@ -720,10 +723,12 @@ footer {
   color: var(--address-color);
   background-color: var(--accent-text-color);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  transition: var(--transition);
 }
 
 /* Work */
+.work-thumb img {
+  display: block;
+}
 .work {
   display: flex;
   flex-wrap: wrap;
@@ -761,6 +766,7 @@ footer {
   border: 1px solid rgba(238, 238, 238, 1);
   box-sizing: border-box;
   width: 370px;
+  transition: box-shadow var(--transition);
 }
 
 .work-slide:not(:nth-child(3n)) {
@@ -771,20 +777,22 @@ footer {
   margin-bottom: 30px;
 }
 
-.work-link:hover {
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  transition: var(--transition);
+.work-slide:hover,
+.work-slide:focus {
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .work-link {
   display: inline-block;
-  overflow: hidden;
+  transition: var(--transition);
 }
 
 /* Overlay */
 
 .work-thumb {
   position: relative;
+  overflow: hidden;
+  text-decoration: none;
 }
 
 .work-thumb-overlay {
@@ -799,33 +807,15 @@ footer {
   padding-right: 24px;
   transform: translateY(100%);
   transition: var(--transition);
+
   opacity: 0;
 
   color: var(--address-color);
+  background-color: var(--accent-text-color);
   font-weight: 400;
   font-size: 18px;
   line-height: 1.55;
   letter-spacing: 0.03em;
-  transition: var(--transition);
-}
-
-.work-thumb::before {
-  display: inline-block;
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: var(--overlay-bg-color);
-  opacity: 0;
-  transform: translateY(100%);
-  transition: var(--transition);
-}
-
-.work .work-link:hover .work-thumb::before {
-  transform: translateY(0);
-  opacity: 1;
 }
 
 .work .work-link:hover .work-thumb-overlay {
